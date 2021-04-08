@@ -1,0 +1,118 @@
+/*TODO ESTO ES DE LA BARRA*/
+/*eso es el cuadrado blanco del fondo de la barra*/
+.navbar a 
+{
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/*este es el hover naranjo que es un cuadrado y tambien el color de la letra*/
+.navbar a:hover
+{
+    background-color: #eeae4a;
+    color: rgb(0, 0, 0) !important;
+}
+/*esto es para el logo de la pagina*/
+.navbar .navbar-brand
+{
+    font-family: 'Oswald', sans-serif;
+    color: black;
+    font-weight: bolder;
+    font-size: 2.3em;
+    
+}
+/*para que el logo no tenga hover se pone color transparente*/
+.navbar-brand:hover
+{
+    background-color: transparent !important;
+}
+/*aqui se modifica la fuente de la barra*/
+.nav-link
+{
+    color: rgb(218, 133, 36) !important;
+    font-family: Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 600;
+}
+/*color fondo de la pagina*/
+body
+{
+    background-color: rgb(214, 212, 210);
+    padding: 15px;
+    margin: 0px;
+
+}
+
+/*CARRUSEL*/
+/*Margen de la parte de arriba*/
+.slide
+{
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+/*Tamaño de la img*/
+.slide img
+{
+    height: 65vh;
+}
+
+/*TESTIMONIO*/
+aside, main 
+{
+    display: table-cell;
+    padding: 10px;
+    vertical-align: top;
+}
+aside
+{
+    margin-top: 20px;
+    font-family: cursive;
+    width: 20%;
+    font-size: 16px;
+}
+
+/*PIE DE PAG*/
+footer
+{
+    border-top: 1px solid black;
+    text-align: left;
+    height: 200px;
+    padding: 10px;
+}
+footer ul li
+{
+    list-style: none;
+}
+/*HASTA ACA ES LA PAGINA PRINCIPAL*/
+/*----------------------------------*/
+
+/*PRINCIPAL DE PERROS*/
+
+.titulo
+{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    color:dimgray;
+}
+.subtitulo
+{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    color: maroon;
+}
+/*HASTA ACA ES LA PAGINA DE PERROS*/
+/*----------------------------------*/
+
+/*PAGINA PERROs*/
+.TituloPerros
+{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    color:rgb(102, 62, 11);
+}
+
+
