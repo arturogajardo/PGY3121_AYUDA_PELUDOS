@@ -52,25 +52,25 @@
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-6 mb-3">
-                <form class="needs-validation" id="formulario" novalidate>
+                <form class="need-validation" id="formulario">
                     <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom01">Nombre</label>
-                        <input type="text" class="form-control validate[required]" id="validationCustom01" required>
+                        <input type="text" class="form-control validate[required]" id="validationCustom01">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom02">Email</label>
-                        <input type="text" class="form-control validate[required,custom[email]]" id="validationCustom02" required>
+                        <input type="text" class="form-control validate[required,custom[email]]" id="validationCustom02">
                     </div>
                     </div>
                     <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom03">Ciudad</label>
-                        <input type="text" class="form-control validate[required]" id="validationCustom03" required>                       
+                        <input type="text" class="form-control validate[required]" id="validationCustom03" >                       
                     </div>                    
                     <div class="col-md-3 mb-3">
                         <label for="validationCustom05">Telefono</label>
-                        <input type="text" class="form-control validate[required, custom[onlyNumberSp]]" id="validationCustom05" required>
+                        <input type="text" class="form-control validate[required, custom[onlyNumberSp]]" id="validationCustom05">
                     </div>                    
                     </div>
                     <div class="mb-3">
@@ -80,16 +80,18 @@
                     <p>
                         <a href="#" id="politica" title="Condiciones">Politica de Privacidad</a>
                     </p>
-                    <div class="form-group">
-                    <div class="form-check ">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck">
-                        Acepto las condiciones
-                        </label>
+                    <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox"  id="invalidCheck" required>
+                          <label class="form-check-label" for="invalidCheck">
+                            Acepto la politica de Privacidad
+                          </label>
+                        </div>
                     </div>
+                    <div class="col-12">
+                        <button class="btn btn-secondary" type="reset">Limpiar</button>
+                        <button type="submit" value="Send" class="btn btn-success" id="submit">Enviar</button>
                     </div>
-                    <button class="btn btn-primary" type="reset">Limpiar</button>
-                    <button class="btn btn-primary" type="submit">Enviar</button>
                 </form>
             </div>
         </div>
