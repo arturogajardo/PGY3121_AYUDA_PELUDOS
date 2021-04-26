@@ -12,7 +12,7 @@
 /*este es el hover naranjo que es un cuadrado y tambien el color de la letra*/
 .navbar a:hover
 {
-    background-color: #eeae4a;
+    background-color: #10aaf1;
     color: rgb(0, 0, 0) !important;
 }
 /*esto es para el logo de la pagina*/
@@ -32,7 +32,7 @@
 /*aqui se modifica la fuente de la barra*/
 .nav-link
 {
-    color: rgb(218, 133, 36) !important;
+    color: rgb(0, 0, 0) !important;
     font-family: Arial, Helvetica, 'Nimbus Sans L', sans-serif;
     font-size: 16px;
     line-height: 30px;
@@ -41,7 +41,7 @@
 /*color fondo de la pagina*/
 body
 {
-    background-color: rgb(214, 212, 210);
+    background-color: rgb(21, 181, 221);
     padding: 15px;
     margin: 0px;
 
@@ -58,6 +58,12 @@ body
 .slide img
 {
     height: 65vh;
+}
+
+.carousel, .carousel-inner
+{
+    width: 1500px;
+    margin: auto;
 }
 
 /*TESTIMONIO*/
@@ -82,6 +88,7 @@ footer
     text-align: left;
     height: 200px;
     padding: 10px;
+    
 }
 footer ul li
 {
@@ -114,5 +121,9 @@ footer ul li
     text-align: center;
     color:rgb(102, 62, 11);
 }
-
+/*Color formulario*/
+#politica
+{
+    color: black;
+}
 
