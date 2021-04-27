@@ -56,26 +56,48 @@
                     <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom01">Nombre</label>
-                        <input type="text" class="form-control validate[required]" id="validationCustom01">
+                        <input type="text" class="form-control validate[required]" id="validationCustom01" placeholder="Ingrese su nombre">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom02">Email</label>
-                        <input type="text" class="form-control validate[required,custom[email]]" id="validationCustom02">
+                        <input type="text" class="form-control validate[required,custom[email]]" id="validationCustom02" placeholder="Ingrese su Email">
                     </div>
                     </div>
                     <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom03">Ciudad</label>
-                        <input type="text" class="form-control validate[required]" id="validationCustom03" >                       
+                        <input type="text" class="form-control validate[required]" id="validationCustom03" placeholder="Ingrese su Ciudad">                       
                     </div>                    
                     <div class="col-md-3 mb-3">
                         <label for="validationCustom05">Telefono</label>
-                        <input type="text" class="form-control validate[required, custom[onlyNumberSp]]" id="validationCustom05">
+                        <input type="text" class="form-control validate[required, custom[onlyNumberSp]]" id="validationCustom05" placeholder="Ingrese Telefono">
                     </div>                    
+                    </div>
+                    <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="rut" name="customRadioInline" class="custom-control-input" value="rut">
+                            <label class="custom-control-label" for="rut">Rut</label>
+                          </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="pasaporte" name="customRadioInline" class="custom-control-input" value="pasaporte">
+                            <label class="custom-control-label" for="pasaporte">Pasaporte</label>
+                          </div>
+                    </div>
+                    </div>
+                    <div class="form-row">
+                    <div class="col-md-3 mb-3">                        
+                        <div class="col-md-20 mb-2">
+                            <span id="textoRut">Ingrese RUT</span>
+                            <span id="textoPasaporte">Ingrese Pasaporte</span>
+                            <label for="validationCustom07"></label>
+                            <input type="text" class="form-control validate[required]" id="validationCustom07" placeholder="Rut o Pasaporte">                       
+                        </div>                
+                    </div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Escribe tu mensaje</label>
-                        <textarea class="form-control validate[required, minSize[50]]" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        <textarea class="form-control validate[required, minSize[50]]" id="exampleFormControlTextarea1" rows="4" placeholder="Dejanos un comentario aqui..."></textarea>
                     </div>
                     <p>
                         <a href="#" id="politica" title="Condiciones">Politica de Privacidad</a>
@@ -117,6 +139,21 @@
         });
     </script>
     <!--pie de pagina-->
+    <script>
+        $(document).ready(function(){
+            $("#textoRut").hide();
+            $("#textoPasaporte").hide();
+            $("#rut").click(function(){
+                $("#textoRut").show(500);
+                $("#textoPasaporte").hide(500);
+            })
+            $("#pasaporte").click(function(){
+                $("#textoRut").hide(500);
+                $("#textoPasaporte").show(500);
+            })
+        })
+        
+    </script>
 </body>   
     
 </html>
