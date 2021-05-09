@@ -119,6 +119,20 @@
         </div>
     </div>
     <!--fomrulario-->
+    <!--CLIMA-->
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">Clima segun su ubicacion</h5>
+            <p class="card-text">Ubicacion: <span id="ciudad"></span></p> 
+            <p class="card-text">Temp. actual: <span id="temp"></span></p> 
+            <p class="card-text">Temp. min: <span id="tempmin"></span></p> 
+            <p class="card-text">Temp. max: <span id="tempmax"></span></p> 
+            <button id="boton1" class="btn btn-primary">Obtener Clima</button>
+            </div>
+        </div>
+    </div>
+    <!--CLIMA-->
 
     <!--pie de pagina-->
 
@@ -153,6 +167,41 @@
             })
         })
         
+    </script>
+
+    <script>
+        $(document).ready(function(){
+        
+            $("#boton1").one("click",function()
+                {                   
+                    getLocation();
+                }
+            );
+            
+        
+        });
+        
+        function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            //x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+        }
+        
+        function showPosition(position) {     
+            
+            //$("#longitud").html("Longitud: " + position.coords.longitude);
+            //$("#latitud").html("Latitud: " + position.coords.latitude);
+            
+            $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&appid=b163a8065e354a8902d7489f3570b3a5",
+                    function(data){
+                        $("#ciudad").append(data.name);
+                        $("#temp").append(data.main.temp+"°");
+                        $("#tempmin").append(data.main.temp_min+"°");
+                        $("#tempmax").append(data.main.temp_max+"°");
+                    });          
+        }        
     </script>
 </body>   
     

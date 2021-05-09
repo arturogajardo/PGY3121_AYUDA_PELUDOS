@@ -26,9 +26,6 @@
                     <li class="nav_item">
                         <a class="nav-link" href="#">NOSOTROS</a>
                     </li>
-                    <li class="nav_item">
-                      <a class="nav-link" href="Clima.html">CLIMA</a>
-                  </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">ADOPTA</a>
                     </li>
@@ -48,61 +45,24 @@
         </div>
     </div>
 
-    <!--AHORA CREAMOS EL CARRUSEL-->
+    <!--<button id="boton1" class="btn btn-primary">Clima</button>-->
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="row">
+        <!--<span>Ciudad</span> <span id="ciudad"></span>-->
+        <!--<span>Temp. Min</span> <span id="tempmin"></span>
+        <span>Temp. Max</span> <span id="tempmax"></span>-->       
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Clima segun su ubicacion</h5>
+          <p class="card-text">Ubicacion: <span id="ciudad"></span></p> 
+          <p class="card-text">Temp. actual: <span id="temp"></span></p> 
+          <p class="card-text">Temp. min: <span id="tempmin"></span></p> 
+          <p class="card-text">Temp. max: <span id="tempmax"></span></p> 
+          <button id="boton1" class="btn btn-primary">Obtener Clima</button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" >
-              <a href="PagPerros.html">
-                <img src="img/perro1.jpg" class="d-block w-100" alt="Perro1" width="620px" height="450px">
-              </a>           
-            <div class="carousel-caption d-none d-md-block">
-              <h5>ADOPTA UN PERRITO</h5>
-              <p>Pincha la imagen para mas informacion...</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-              <a href="PagPerros.html">
-                <img src="img/perro2.jpg" class="d-block w-100" alt="Perro2" width="620px" height="450px">
-              </a>           
-            <div class="carousel-caption d-none d-md-block">
-              <h5>ELLOS TE NECESITAN</h5>
-              <p>Pincha la imagen para mas informacion...</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-              <a href="PagPerros.html">
-                <img src="img/perro3.jpg" class="d-block w-100" alt="Perro3" width="620px" height="450px">
-              </a>           
-            <div class="carousel-caption d-none d-md-block">
-              <h5>BUSCO DUEÑO!!</h5>
-              <p>Pincha la imagen para mas informacion...</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-
-    <!--Testimonio-->  
-
-    <aside>Familia anonima: "Desde que adoptamos a Terry nuestra vida cambio. Ahora somos muy felices"</aside>
-    <main>
-        <img src="img/adopcionprincipal.jpg" alt="adopcionprincipal" class="img-fluid" width="400px" height="250px"> 
-    </main>     
-    </div> 
-
     <!--pie de pagina-->
 
     <footer>
@@ -133,4 +93,38 @@
     integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>    
     
 </body>
+<script>
+    $(document).ready(function(){
+    
+        $("#boton1").one("click",function()
+            {                   
+                getLocation();
+            }
+        );
+        
+    
+    });
+    
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        //x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {     
+        
+        //$("#longitud").html("Longitud: " + position.coords.longitude);
+        //$("#latitud").html("Latitud: " + position.coords.latitude);
+        
+        $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&appid=b163a8065e354a8902d7489f3570b3a5",
+                function(data){
+                    $("#ciudad").append(data.name);
+                    $("#temp").append(data.main.temp+"°");
+                    $("#tempmin").append(data.main.temp_min+"°");
+                    $("#tempmax").append(data.main.temp_max+"°");
+                });          
+    }        
+</script>
 </html>
