@@ -60,7 +60,7 @@
           <p class="card-text">Temp. actual: <span id="temp"></span></p> 
           <p class="card-text">Temp. min: <span id="tempmin"></span></p> 
           <p class="card-text">Temp. max: <span id="tempmax"></span></p> 
-          <button id="boton1" class="btn btn-primary">Obtener Clima</button>
+          <!--<button id="boton1" class="btn btn-primary">Obtener Clima</button>-->
         </div>
       </div>
     <!--pie de pagina-->
@@ -95,13 +95,19 @@
 </body>
 <script>
     $(document).ready(function(){
+        getLocation();
     
-        $("#boton1").one("click",function()
+        /*$("#boton1").one("click",function()
             {                   
                 getLocation();
             }
-        );
+        );*/
         
+        /*window.onload(function()
+            {                   
+                getLocation();
+            }
+        );*/
     
     });
     
@@ -118,7 +124,7 @@
         //$("#longitud").html("Longitud: " + position.coords.longitude);
         //$("#latitud").html("Latitud: " + position.coords.latitude);
         
-        $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&appid=b163a8065e354a8902d7489f3570b3a5",
+        $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&appid=51cb7c5032090b6089efbb1e3b1b562c",
                 function(data){
                     $("#ciudad").append(data.name);
                     $("#temp").append(data.main.temp+"°");
